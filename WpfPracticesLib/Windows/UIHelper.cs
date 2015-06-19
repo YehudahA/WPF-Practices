@@ -5,7 +5,7 @@ using System.Windows.Media;
 
 namespace WpfPracticesLib.Windows
 {
-    public static class UIHelper
+    internal static class UIHelper
     {
         public static T FindAncestor<T>(DependencyObject dependencyObject)
             where T : DependencyObject
@@ -123,19 +123,6 @@ namespace WpfPracticesLib.Windows
             }
 
             return null;
-        }
-
-
-        public static void ApplyBinding(DependencyObject target, DependencyProperty property, BindingBase binding)
-        {
-            if (binding != null)
-            {
-                BindingOperations.SetBinding(target, property, binding);
-            }
-            else
-            {
-                BindingOperations.ClearBinding(target, property);
-            }
         }
     }
 }
